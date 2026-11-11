@@ -1,0 +1,183 @@
+
+/* General page styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fb;
+    color: #25344a;
+    margin: 0;
+    line-height: 1.7;
+}
+
+/* Header */
+header {
+    background-color: #203b65;
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+header h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+/* Navigation */
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ffd76a;
+    text-decoration: underline;
+}
+
+/* Main content */
+main {
+    background-color: white;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+h2 {
+    color: #203b65;
+    font-size: 28px;
+    border-bottom: 3px solid #ffd76a;
+    padding-bottom: 10px;
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+/* Mobile-friendly layout */
+@media (max-width: 600px) {
+    main {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    nav a {
+        margin: 0 8px;
+    }
+}
+
+
+/* Photo gallery - 5 images in one row */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.photo-gallery img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 0;
+}
+
+/* Personal photos - two columns */
+.personal-gallery {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* Work photos - three columns */
+.work-gallery {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.work-gallery div {
+    text-align: center;
+}
+
+.work-gallery p {
+    font-weight: bold;
+    color: #203b65;
+    margin-top: 8px;
+}
+
+/* APM visualization statistics */
+.apm-stats {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.apm-stats div {
+    background-color: #f4f7fb;
+    padding: 15px;
+    border-radius: 12px;
+    flex: 1;
+}
+
+.apm-stats h3 {
+    color: #203b65;
+    font-size: 28px;
+    margin: 0;
+}
+
+.apm-stats p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+#apm-chart svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.chart-note {
+    font-size: 13px;
+    color: #666;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .apm-stats {
+        flex-direction: column;
+    }
+}
+
+/* Contact section */
+.contact-links {
+    margin-top: 20px;
+}
+
+.contact-links a {
+    display: inline-block;
+    background-color: #203b65;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-links a:hover {
+    background-color: #345b91;
+}

@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Experience</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>My Personal Website</h1>
+        <nav>
+            <a href="index.html">About Me</a>
+            <a href="experience.html">My Experience</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>My Professional Experience</h2>
+
+        <p>
+            Throughout my time at Northeastern University,
+            I've had the opportunity to explore my interests
+            in business, technology, and data analytics through
+            several internships and co-ops. These experiences
+            have helped me develop technical skills, understand
+            how different companies operate, and discover my
+            passion for building data-driven products.
+        </p>
+
+        <h3>PayPal - Product Management Intern</h3>
+        <p>
+            During the summer of 2026, I worked as a Product
+            Management Intern on PayPal's AI Transformation
+            team in San Jose, California. I contributed to
+            the development of SightGlass, a merchant
+            intelligence platform designed to help teams
+            monitor merchant performance. One of my main
+            projects was developing a near-real-time anomaly
+            detection feature to identify unusual changes
+            in business-critical metrics. This experience
+            strengthened my ability to work with engineers,
+            translate user needs into product requirements,
+            and build solutions to complex problems.
+        </p>
+
+        <h3>WHOOP - Product Analytics Co-op</h3>
+        <p>
+            In 2025, I worked on WHOOP's Growth team in
+            Boston. My role focused on using data to
+            understand user behavior, improve website
+            conversion rates, and support product decisions.
+            I conducted funnel analyses, evaluated A/B
+            tests, and developed dashboards to monitor
+            important business metrics. I also had the
+            opportunity to contribute to the launch of
+            WHOOP 5.0. This experience showed me how
+            small, data-driven product improvements can
+            create meaningful long-term business impact.
+        </p>
+
+        <h3>Wayfair - Strategy & Operations Co-op</h3>
+        <p>
+            At Wayfair, I worked in marketing analytics
+            and strategy and operations. My responsibilities
+            included automating advertising cost reporting,
+            analyzing marketing performance, and supporting
+            business decision-making through data.
+            Working with large datasets helped me improve
+            my analytical skills and develop a better
+            understanding of how companies measure
+            performance across different business channels.
+        </p>
+
+        <h2>My Technical Skills</h2>
+        <ul>
+            <li>Python for data analysis and visualization</li>
+            <li>SQL for querying and analyzing data</li>
+            <li>Data visualization</li>
+            <li>A/B testing and experimentation</li>
+        </ul>
+
+        
+        <h2>My Experience Gallery</h2>
+
+        <div class="photo-gallery work-gallery">
+            <div>
+                <img src="paypal.jpeg" alt="PayPal internship">
+                <p>PayPal</p>
+            </div>
+
+            <div>
+                <img src="whoop.jpeg" alt="WHOOP co-op">
+                <p>WHOOP</p>
+            </div>
+
+            <div>
+                <img src="wayfair.jpeg" alt="Wayfair co-op">
+                <p>Wayfair</p>
+            </div>
+        </div>
+
+
+
+<h2>How Competitive Are APM Programs?</h2>
+
+<p>
+    As an aspiring product manager, I'm particularly
+    interested in Associate Product Manager (APM)
+    programs. These programs offer recent graduates
+    the opportunity to develop product management
+    skills at leading technology companies.
+
+    Google's APM program is especially competitive.
+    Historical estimates from 2023 suggest that
+    approximately 8,000 candidates applied annually,
+    with only 40-45 accepted.
+    I wanted to visualize just how selective
+    this process can be.
+</p>
+
+        <div class="apm-stats">
+            <div>
+                <h3>8,000</h3>
+                <p>Applicants</p>
+            </div>
+
+            <div>
+                <h3>40-45</h3>
+                <p>Accepted</p>
+            </div>
+
+            <div>
+                <h3>~0.5%</h3>
+                <p>Acceptance Rate</p>
+            </div>
+        </div>
+
+        <div id="apm-chart"></div>
+
+        <p class="chart-note">
+            Each dot represents approximately 40 applicants.
+            The yellow dot represents accepted candidates.
+            Source:
+            <a href="https://tech.yahoo.com/business/articles/googles-highly-competitive-apm-program-170020546.html">
+                Business Insider (2023)
+            </a>.
+            Figures are historical estimates.
+        </p>
+
+
+        <!-- Load D3 library -->
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+
+        <script>
+            // Historical Google APM estimates
+            const applicants = 8000;
+            const accepted = 40;
+
+            // Each dot represents approximately 40 people
+            const peoplePerDot = 40;
+            const totalDots = applicants / peoplePerDot;
+
+            // Chart dimensions
+            const width = 660;
+            const height = 290;
+            const columns = 20;
+
+            // Create SVG
+            const svg = d3.select("#apm-chart")
+                .append("svg")
+                .attr("viewBox", `0 0 ${width} ${height}`)
+                .attr("role", "img")
+                .attr("aria-label",
+                    "Dot chart of 8000 applicants, with approximately 40 accepted");
+
+            // Create array of 200 dots
+            const dots = d3.range(totalDots);
+
+            // Draw the dots
+            svg.selectAll("circle")
+                .data(dots)
+                .enter()
+                .append("circle")
+                .attr("cx", d => 20 + (d % columns) * 32)
+                .attr("cy", d => 25 + Math.floor(d / columns) * 26)
+                .attr("r", 9)
+                .attr("fill", d =>
+                    d === 0 ? "#e4b343" : "#203b65"
+                )
+                .append("title")
+                .text(d =>
+                    d === 0
+                        ? "Approximately 40-45 accepted applicants"
+                        : "Approximately 40 applicants not accepted"
+                );
+        </script>
+
+
+
+    </main>
+</body>
+</html>
